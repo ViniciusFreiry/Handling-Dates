@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,5 +18,9 @@ public class Main {
         } else {
             System.out.println("It's not the due date yet!");
         }
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        System.out.println("\nToday Date Formatted for Brazil: " + todayDate.format(formatter));
     }
 }
