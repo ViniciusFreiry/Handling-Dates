@@ -37,8 +37,16 @@ public class Main {
         LocalTime start = LocalTime.now();
         LocalTime end = LocalTime.of(22, 0);
 
+        // Using Duration
         Duration duration = Duration.between(start, end);
         System.out.println("\nTime between now and 10 PM: " + duration.toHours() + " Hours and "
                 + duration.toMinutesPart() + " Minutes");
+
+        // Using Period
+        LocalDate paymentDate = LocalDate.parse("2025-05-26");
+        Period period = Period.between(paymentDate, firstInstallmentDate);
+
+        System.out.println("Difference between payment date and first installment date: "
+                + (period.getYears() * 365 + period.getMonths() * 30 + period.getDays()));
     }
 }
