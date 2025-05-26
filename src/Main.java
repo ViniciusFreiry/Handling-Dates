@@ -1,6 +1,4 @@
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 
 public class Main {
@@ -34,5 +32,13 @@ public class Main {
         ZonedDateTime purchaseCompletionDateNy = purchaseCompletionDate.withZoneSameInstant(
                 ZoneId.of("America/New_York"));
         System.out.println("\nPurchase Completion Date in New York: " + purchaseCompletionDateNy);
+
+        // Using LocalTime
+        LocalTime start = LocalTime.now();
+        LocalTime end = LocalTime.of(22, 0);
+
+        Duration duration = Duration.between(start, end);
+        System.out.println("\nTime between now and 10 PM: " + duration.toHours() + " Hours and "
+                + duration.toMinutesPart() + " Minutes");
     }
 }
